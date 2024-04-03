@@ -24,9 +24,9 @@ const l2i = (letter: string): number => {
  * @param gridLocator grid locator
  * @returns true if the grid locator is valid
  */
-const validateGridLocator = (gridLocator: GridLocator) => {
-  if (typeof gridLocator !== 'string') throw new Error("invalid gridLocator. it should be string")
-  if (gridLocator.length % 2 !== 0) throw new Error("invalid gridLocator. it should be even length")
+const validateGridLocator = (gridLocator: GridLocator): boolean => {
+  if (typeof gridLocator !== 'string') return false
+  if (gridLocator.length % 2 !== 0) return false
   const regex = /^[A-R]{2}[0-9]{2}[A-Xa-x]{2}$/
   return regex.test(gridLocator)
 }
