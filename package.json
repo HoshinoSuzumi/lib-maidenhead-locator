@@ -1,9 +1,15 @@
 {
-  "name": "@uniiem/typescript-lib-template",
+  "name": "@hamset/maidenhead-locator",
   "type": "module",
   "version": "0.0.0",
-  "description": "TypeScript Library Template",
-  "keywords": [],
+  "description": "Maidenhead grid locator and WGS84 coordinate calculation and transformation",
+  "keywords": [
+    "maidenhead-locator",
+    "wgs84",
+    "converter",
+    "ham-radio",
+    "amateur-radio"
+  ],
   "author": "HoshinoSuzumi <master@uniiem.com>",
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
