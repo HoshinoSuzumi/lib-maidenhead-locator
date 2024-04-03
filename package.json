@@ -1,7 +1,7 @@
 {
   "name": "@hamset/maidenhead-locator",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Maidenhead grid locator and WGS84 coordinate calculation and transformation",
   "keywords": [
     "maidenhead-locator",
