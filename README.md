@@ -1,10 +1,10 @@
 # @hamset/maidenhead-locator
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/HoshinoSuzumi/maidenhead-locator/ci.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/HoshinoSuzumi/lib-maidenhead-locator/ci.yml)
 ![NPM Downloads](https://img.shields.io/npm/dm/%40hamset%2Fmaidenhead-locator)
 ![NPM Version (with dist tag)](https://img.shields.io/npm/v/%40hamset%2Fmaidenhead-locator/latest)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/%40hamset%2Fmaidenhead-locator)
-![GitHub License](https://img.shields.io/github/license/HoshinoSuzumi/maidenhead-locator)
+![GitHub License](https://img.shields.io/github/license/HoshinoSuzumi/lib-maidenhead-locator)
 
 Maidenhead grid locator and WGS84 coordinate calculation and transformation
 
