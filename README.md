@@ -33,7 +33,7 @@ const coordinate: LatLng = { lat: 36.75, lng: -119.5 }
 const grid_locator: GridLocator = WGS84ToMaidenhead(coordinate);  // output: 'DM06gs'
 ```
 
-## API
+## APIs
 
 ```typescript
 import { CoordinateLike, GridLocator, WGS84 } from "./types";
@@ -55,6 +55,12 @@ declare const WGS84ToMaidenhead: (coord: CoordinateLike) => GridLocator;
  * @returns coordinate
  */
 declare const maidenheadToWGS84: (gridLocator: GridLocator) => WGS84;
+/**
+ * Convert Maidenhead to bounding box coordinates
+ * @param gridLocator grid locator
+ * @returns A two-dimensional array containing two diagonal coordinates of bounds
+ */
+declare const maidenheadToBoundingBox: (gridLocator: GridLocator) => [LatLng, LatLng];
 
 //
 // types

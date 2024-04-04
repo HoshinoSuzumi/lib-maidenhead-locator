@@ -1,4 +1,4 @@
-import { CoordinateLike, GridLocator, WGS84 } from "./types";
+import { CoordinateLike, GridLocator, LatLng, WGS84 } from "./types";
 
 /**
  * Convert index to letter in the alphabet
@@ -69,4 +69,25 @@ const maidenheadToWGS84 = (gridLocator: GridLocator): WGS84 => {
   return { lat, lng } as WGS84
 }
 
-export { validateGridLocator, maidenheadToWGS84, WGS84ToMaidenhead }
+/**
+ * Convert Maidenhead to bounding box coordinates
+ * @param gridLocator grid locator
+ * @returns A two-dimensional array containing two diagonal coordinates of bounds
+ */
+const maidenheadToBoundingBox = (gridLocator: GridLocator): [LatLng, LatLng] => {
+  if (!validateGridLocator(gridLocator)) throw new Error("invalid gridLocator")
+  let lng = l2i(gridLocator[0]) * 20 + parseInt(gridLocator[2]) * 2 + l2i(gridLocator[4]) * 5 / 60 - 180;
+  let lat = l2i(gridLocator[1]) * 10 + parseInt(gridLocator[3]) + l2i(gridLocator[5]) * 2.5 / 60 - 90;
+
+  return [
+    [lat, lng],
+    [lat + 2.5 / 60, lng + 5 / 60]
+  ];
+}
+
+export {
+  validateGridLocator,
+  maidenheadToWGS84,
+  WGS84ToMaidenhead,
+  maidenheadToBoundingBox
+}

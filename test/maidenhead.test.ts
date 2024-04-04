@@ -5,6 +5,7 @@ import {
   validateGridLocator,
   WGS84ToMaidenhead,
   maidenheadToWGS84,
+  maidenheadToBoundingBox,
   LatLng
 } from '../src'
 
@@ -37,7 +38,6 @@ describe('Maidenhead', () => {
 
     it('should convert Maidenhead to WGS84', () => {
       const result = maidenheadToWGS84(grid)
-      console.log(result);
       
       if (Array.isArray(latlng)) {
         expect(result.lat).toBeCloseTo(latlng[0], 0)
@@ -47,6 +47,14 @@ describe('Maidenhead', () => {
         expect(result.lat).toBeCloseTo(latlng.lat, 0)
         expect(result.lng).toBeCloseTo(latlng.lng, 0)
       }
+    })
+
+    it('should convert Maidenhead to bounding box coordinates', () => {
+      const result = maidenheadToBoundingBox(grid)
+      
+      expect(result).toHaveLength(2)
+      expect(result[0]).toHaveLength(2)
+      expect(result[1]).toHaveLength(2)
     })
   }
 })
